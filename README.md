@@ -54,3 +54,4 @@ Para no depender de un servidor de correo, en el entorno `local` el enlace de re
 
 Todas las rutas de los módulos están protegidas con el middleware `auth`.
 # Proyecto-del-COIL
+# Proyecto-del-COIL
