@@ -2,6 +2,7 @@
 
 @section('adminlte_css_pre')
     <link rel="stylesheet" href="{{ asset('vendor/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/auth-dark.css') }}">
 @stop
 
 @php
@@ -20,7 +21,7 @@
     }
 @endphp
 
-@section('auth_header', __('adminlte::adminlte.login_message'))
+@section('auth_header', 'VetControl - Sign In')
 
 @section('auth_body')
     <form action="{{ $loginUrl }}" method="post">
@@ -29,7 +30,7 @@
         {{-- Email field --}}
         <div class="input-group mb-3">
             <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
-                value="{{ old('email') }}" placeholder="{{ __('adminlte::adminlte.email') }}" autofocus>
+                value="{{ old('email') }}" placeholder="Email" autofocus>
 
             <div class="input-group-append">
                 <div class="input-group-text">
@@ -47,7 +48,7 @@
         {{-- Password field --}}
         <div class="input-group mb-3">
             <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"
-                placeholder="{{ __('adminlte::adminlte.password') }}">
+                placeholder="Password">
 
             <div class="input-group-append">
                 <div class="input-group-text">
@@ -66,7 +67,7 @@
         <div class="row">
             <div class="col-7">
                 <div class="icheck-primary" title="{{ __('adminlte::adminlte.remember_me_hint') }}">
-                    <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                    <input type="checkbox" name="remember" id="remember" @checked(old('remember'))>
 
                     <label for="remember">
                         {{ __('adminlte::adminlte.remember_me') }}
@@ -82,16 +83,6 @@
             </div>
         </div>
     </form>
-
-    {{-- Social authentication buttons (visual only) --}}
-    <div class="social-auth-links text-center mt-2 mb-3">
-        <a href="#" class="btn btn-block btn-primary" onclick="return false;">
-            <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-        </a>
-        <a href="#" class="btn btn-block btn-danger" onclick="return false;">
-            <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
-        </a>
-    </div>
 @stop
 
 @section('auth_footer')

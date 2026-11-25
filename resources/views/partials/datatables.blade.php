@@ -1,32 +1,34 @@
-@push('js')
+@push('scripts')
     <script>
         $(function () {
             $('#{{ $tableId }}').DataTable({
                 language: {
-                    processing: 'Procesando...',
-                    lengthMenu: 'Mostrar _MENU_ entradas',
-                    zeroRecords: 'No se encontraron resultados',
-                    emptyTable: 'Ningún dato disponible en esta tabla',
-                    info: 'Mostrando _START_ a _END_ de _TOTAL_ entradas',
-                    infoEmpty: 'Mostrando 0 a 0 de 0 entradas',
-                    infoFiltered: '(filtrado de _MAX_ entradas totales)',
-                    search: 'Buscar:',
-                    loadingRecords: 'Cargando...',
+                    processing: 'Processing...',
+                    lengthMenu: 'Show _MENU_ entries',
+                    zeroRecords: 'No matching records found',
+                    emptyTable: 'No data available in table',
+                    info: 'Showing _START_ to _END_ of _TOTAL_ entries',
+                    infoEmpty: 'Showing 0 to 0 of 0 entries',
+                    infoFiltered: '(filtered from _MAX_ total entries)',
+                    search: 'Search:',
+                    loadingRecords: 'Loading...',
                     paginate: {
-                        first: 'Primero',
-                        last: 'Último',
-                        next: 'Siguiente',
-                        previous: 'Anterior'
+                        first: 'First',
+                        last: 'Last',
+                        next: 'Next',
+                        previous: 'Previous'
                     },
                     aria: {
-                        sortAscending: ': Activar para ordenar la columna de manera ascendente',
-                        sortDescending: ': Activar para ordenar la columna de manera descendente'
+                        sortAscending: ': activate to sort column ascending',
+                        sortDescending: ': activate to sort column descending'
                     }
                 },
                 order: [[0, 'asc']],
                 columnDefs: [
                     { targets: {{ $actionsColumn }}, orderable: false, searchable: false }
-                ]
+                ],
+                responsive: true,
+                autoWidth: false,
             });
         });
     </script>

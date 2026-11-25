@@ -2,18 +2,29 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Appointment;
+use App\Models\Owner;
+use App\Models\Pet;
+use App\Models\Veterinarian;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    use WithoutModelEvents;
-
     /**
      * Seed the application's database.
      */
     public function run(): void
     {
-        $this->call(TipoDocumentoSeeder::class);
+        // Create owners
+        Owner::factory(15)->create();
+
+        // Create veterinarians
+        Veterinarian::factory(5)->create();
+
+        // Create pets
+        Pet::factory(30)->create();
+
+        // Create appointments
+        Appointment::factory(50)->create();
     }
 }

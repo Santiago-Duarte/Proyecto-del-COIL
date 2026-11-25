@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'AdminLTE')
+@section('title', 'VetControl')
 
 @section('content_header')
     <h1 class="m-0" style="font-size: 1.5rem; font-weight: 600;">@yield('page_title')</h1>
